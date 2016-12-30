@@ -5,24 +5,18 @@ MAINTAINER opsxcq <opsxcq@thestorm.com.br>
 RUN apt-get update && \
     apt-get upgrade -y && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
-    package \
+    git \
+    libav-tools \
+    bpython3 \
+    python3 \
+    python3-pip \
     && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-COPY deps /deps
-RUN dpkg -i /deps/*
+RUN pip3 install gmusicapi-wrapper docopt-unicode
 
-COPY packages /packages
-RUN dpkg -i /packages/*
-
-COPY src /src
-RUN cd /src &&     make
-
-RUN useradd --system --uid 666 -M --shell /usr/sbin/nologin username
-USER username
-
-EXPOSE 80
+COPY upload.py /
 
 VOLUME /data
 WORKDIR /data
