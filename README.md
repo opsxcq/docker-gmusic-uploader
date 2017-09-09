@@ -36,3 +36,7 @@ There are two variables:
 
   * `UPLOADER_MAC` - Set any valid MAC address, is required by the library and by the protocol to authenticate you
   * `AUTH_TOKEN` - Is your authentication token
+
+# Credits
+
+Thanks to [Simon Weber](https://github.com/simon-weber/gmusicapi) for creating an API for Google Music, and [thebigmunch](https://github.com/thebigmunch/gmusicapi-scripts) for creating the upload script
