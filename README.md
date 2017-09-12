@@ -37,6 +37,23 @@ There are two variables:
   * `UPLOADER_MAC` - Set any valid MAC address, is required by the library and by the protocol to authenticate you
   * `AUTH_TOKEN` - Is your authentication token
 
+# How to get the AUTH_TOKEN ?
+
+This is the token to connect to your Google Music account, you will need to generate it only once, run a shell in the container as following
+
+```
+docker run --rm -it --entrypoint /bin/bash strm/gmusic-uploader
+```
+
+Then run
+
+```
+/upload.py --cred /auth ; cat /auth.cred | base64
+```
+
+You will be asked to access an URL, where you will have to approve this application to access your account. After that, paste the code returned in the console. The result will be a Base64 encoded string (representing the key file), in just one line, use it as the value for `AUTH_TOKEN` variable
+
+
 # WARNING
 
   * Don't download pirated music
