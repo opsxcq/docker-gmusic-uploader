@@ -57,7 +57,7 @@ You will be asked to access an URL, where you will have to approve this applicat
 # WARNING
 
   * Don't download pirated music
-  * Your music will be deleted after it is successfuly uploaded
+  * Your music local will be deleted after it is successfuly uploaded
 
 # Credits
 
